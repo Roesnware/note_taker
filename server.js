@@ -1,5 +1,6 @@
-// require express
+// require express and path
 const express = require('express');
+const path = require('path');
 
 // set port
 const PORT = process.env.port || 3001;
@@ -16,6 +17,10 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 app.use('/notes', notesRouter);
+
+app.get('/notes', (req, res) =>
+  res.sendFile(path.join(__dirname, '/public/notes.html'))
+);
 
 // listener 
 app.listen(PORT, () =>
