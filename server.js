@@ -1,8 +1,11 @@
 // require express
 const express = require('express');
 
+// set port
+const PORT = process.env.port || 3001;
+
 // import our modular routers for /notes 
-const notesRouter = require('./notes.js');
+const notesRouter = require('./routes/notes.js');
 
 // app instance
 const app = express();
