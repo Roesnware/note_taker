@@ -6,7 +6,7 @@ const { readAndAppend, readFromFile } = require('../helpers/fsUtil.js');
 note.get('/', (req, res) => {
 
   // send all curr notes 
-  readFromFile('../db/db.json').then((data) => res.json(JSON.parse(data)));
+  readFromFile('./db/db.json').then((data) => res.json(JSON.parse(data)));
 });
 
 // post to post new note
@@ -22,7 +22,7 @@ note.post('/', (req, res) => {
   }
 
   // read and append curr notes with new notes added
-  readAndAppend(newNote, '../db/db.json');
+  readAndAppend(newNote, './db/db.json');
 
   // build res obj 
   const response = {
