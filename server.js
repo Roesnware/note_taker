@@ -3,7 +3,7 @@ const express = require('express');
 const path = require('path');
 
 // set port
-const PORT = process.env.port || 3001;
+const port = process.env.port || 3001;
 
 // import our modular routers for api 
 const api = require('./routes/index.js');
@@ -34,5 +34,5 @@ app.get('*', (req, res) =>
 
 // listener 
 app.listen(PORT, () =>
-  console.log(`App listening at http://localhost:${PORT}`)
+  console.log(`App listening at http://localhost:${port}`)
 );
