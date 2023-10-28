@@ -13,15 +13,21 @@ const app = express();
 
 // middlewear
 app.use(express.static('public'));
+
+// repsonse middlewear
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+
+// for api routes
 app.use('/api', api);
 
 // html routes
+// get route for /notes
 app.get('/notes', (req, res) =>
   res.sendFile(path.join(__dirname, '/public/notes.html'))
 );
 
+// get route for all other url links 
 app.get('*', (req, res) =>
   res.sendFile(path.join(__dirname, '/public/index.html'))
 );
