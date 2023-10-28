@@ -31,7 +31,6 @@
 ![demo2](testdemo.mp4)
 
 ## Test
-![output code](output.png)
 
 ## Report
 
