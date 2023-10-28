@@ -2,6 +2,7 @@
 const note = require('express').Router();
 const { v4: uuidv4 } = require('uuid');
 const { readAndAppend, readFromFile } = require('../helpers/fsUtil.js');
+const currData = require('../db/db.json');
 
 // get route to get curr notes
 note.get('/', (req, res) => {
@@ -34,6 +35,27 @@ note.post('/', (req, res) => {
 
   // return res 
   res.json(response);
+});
+
+// delete route 
+// post to post new note
+note.delete('/:id', (req, res) => {
+
+  // read curr notes with specific id
+  let found = currData.some(note => note.id === req.params.id);
+
+  //console.log(found);
+
+  // if no note with id err
+  if(!found){
+    res.status(401).json({message: "note not found"});
+  } else { 
+    // filter out array note from notes and save new array in response array
+    let responseArray = currData.filter(note => note.id !== req.params.id);
+
+    // return new array without specificed note
+    res.json(responseArray);
+  }
 });
 
 // export module 
