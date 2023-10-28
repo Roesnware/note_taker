@@ -18,10 +18,6 @@ app.use(express.urlencoded({ extended: true }));
 
 app.use('/notes', notesRouter);
 
-app.get('/notes', (req, res) =>
-  res.sendFile(path.join(__dirname, '/public/notes.html'))
-);
-
 // listener 
 app.listen(PORT, () =>
   console.log(`App listening at http://localhost:${PORT}`)
