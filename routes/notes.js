@@ -1,5 +1,6 @@
 // import modules
 const note = require('express').Router();
+const { v4: uuidv4 } = require('uuid');
 const { readAndAppend, readFromFile } = require('../helpers/fsUtil.js');
 
 // get route to get curr notes
@@ -18,7 +19,8 @@ note.post('/', (req, res) => {
   // make new note obj
   const newNote = {
     title,
-    text
+    text,
+    id: uuidv4()
   }
 
   // read and append curr notes with new notes added
