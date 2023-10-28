@@ -51,10 +51,16 @@ note.delete('/:id', (req, res) => {
     res.status(401).json({message: "note not found"});
   } else { 
     // filter out array note from notes
-    let response = currData.filter(note => note.id !== req.params.id);
+    let responseArray = currData.filter(note => note.id !== req.params.id);
 
     // rewrite file with new data
-    writeToFile('./db/db.json', response);
+    writeToFile('./db/db.json', responseArray);
+
+    // build resp obj
+    const response = {
+      status: 'success',
+      message: "Note successgully deleted",
+    };
 
     // return new array without specificed note
     res.json(response);
