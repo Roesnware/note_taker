@@ -2,8 +2,8 @@
 ## Description
     
     I want to create a program that enables me to keep all my notes and things to do in one space.
-    This program allows users the ability to make write, delete, and track notes they make.
-    I learned backend operations, express.js aswell as how to work with Heroku.
+    Business owners are able to view and manage the departments, roles, and employees in their company
+    and can organize and plan their business. I learned express.js, node.js, and mySQL.
 
 ## Table of Contents
 
@@ -19,7 +19,7 @@
 
 ## Usage
     
-    Users can use this app by installing the required packages such as express uuid and fs, and then run the index file using node.
+    Users can use this app by installing the required packages such as express mySQL in node, and then run the index file using node.
 
 ## Installation
     
@@ -27,8 +27,8 @@
 
 ## Demo 
 
-![demo1](funcitonalitydemo.mp4)
-![demo2](testdemo.mp4)
+![demo1]()
+![demo2]()
 
 ## Test
 
